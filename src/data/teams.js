@@ -1,5 +1,6 @@
 import arsenal from './images/arsenal.png';
 import brighton from './images/brighton.png';
+import bournemouth from './images/bournemouth.png';
 import burnley from './images/burnley.png';
 import cardiff from './images/cardiff.png';
 import chelsea from './images/chelsea.png';
@@ -21,6 +22,7 @@ import wolverhampton from './images/wolverhampton.png';
 const teams = [
   { name: 'Arsenal', image: arsenal },
   { name: 'Brighton', image: brighton },
+  { name: 'Bournemouth', image: bournemouth },
   { name: 'Burnley', image: burnley },
   { name: 'Cardiff', image: cardiff },
   { name: 'Chelsea', image: chelsea },

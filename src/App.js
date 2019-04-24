@@ -5,26 +5,39 @@ import teams from './data/teams.js';
 
 class App extends Component {
   state = {
-    clicked: []
+    clicked: [],
+    highestScore: 0,
+    message: ''
   };
 
   handleClick = e => {
     const name = e.target.alt;
     const { clicked } = this.state;
-    clicked.includes(name) ? this.resetGame() : this.handleChange(e);
+    clicked.includes(name) ? this.resetGame() : this.correctGuess(e);
   };
 
-  handleChange = e => {
+  correctGuess = e => {
     const name = e.target.alt;
     const { clicked } = this.state;
+    let { message } = this.state;
     clicked.push(name);
-    this.setState({ clicked });
+    message = 'Good Guess!';
+    this.setState({ clicked, message });
+    this.winGame();
     teams.sort(() => Math.random() - 0.5);
   };
 
   resetGame = () => {
-    this.setState({ clicked: [] });
+    const { clicked } = this.state;
+    let { message, highestScore } = this.state;
+    if (highestScore < clicked.length) highestScore = clicked.length;
+    message = 'You already guessed that!';
+    this.setState({ clicked: [], highestScore, message });
     teams.sort(() => Math.random() - 0.5);
+  };
+
+  winGame = () => {
+    if (this.state.clicked.length === 20) console.log('Winner');
   };
 
   displayTeams = teams => {
@@ -43,7 +56,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header score={this.state.clicked.length} />
+        <Header
+          score={this.state.clicked.length}
+          highestScore={this.state.highestScore}
+          message={this.state.message}
+        />
         {this.displayTeams(teams)}
       </div>
     );
