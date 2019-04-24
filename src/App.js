@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Picture from './components/Picture';
+import Header from './components/Header';
+import teams from './data/teams.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    clicked: []
+  };
+
+  handleClick = e => {
+    const name = e.target.alt;
+    const { clicked } = this.state;
+    clicked.includes(name) ? this.resetGame() : this.handleChange(e);
+  };
+
+  handleChange = e => {
+    const name = e.target.alt;
+    const { clicked } = this.state;
+    clicked.push(name);
+    this.setState({ clicked });
+    teams.sort(() => Math.random() - 0.5);
+  };
+
+  resetGame = () => {
+    this.setState({ clicked: [] });
+    teams.sort(() => Math.random() - 0.5);
+  };
+
+  displayTeams = teams => {
+    return teams
+      .sort(() => Math.random() - 0.5)
+      .map((team, i) => (
+        <Picture
+          key={i}
+          name={team.name}
+          image={team.image}
+          handleClick={this.handleClick}
+        />
+      ));
+  };
+
+  render() {
+    return (
+      <div>
+        <Header score={this.state.clicked.length} />
+        {this.displayTeams(teams)}
+      </div>
+    );
+  }
 }
 
 export default App;
