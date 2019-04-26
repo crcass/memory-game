@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import Picture from './components/Picture';
-import Header from './components/Header';
+import React, { Component, Fragment } from 'react';
+import LogoContainer from './components/LogoContainer';
+import TeamLogo from './components/TeamLogo';
+import StyledHeader from './components/StyledHeader';
 import teams from './data/teams.js';
 
 class App extends Component {
@@ -43,9 +44,10 @@ class App extends Component {
   displayTeams = teams => {
     return teams
       .sort(() => Math.random() - 0.5)
-      .map((team, i) => (
-        <Picture
-          key={i}
+      .map(team => (
+        <TeamLogo
+          key={team.name}
+          color={team.color}
           name={team.name}
           image={team.image}
           handleClick={this.handleClick}
@@ -55,14 +57,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Header
+      <Fragment>
+        <StyledHeader
           score={this.state.clicked.length}
           highestScore={this.state.highestScore}
           message={this.state.message}
         />
-        {this.displayTeams(teams)}
-      </div>
+        <LogoContainer>{this.displayTeams(teams)}</LogoContainer>
+      </Fragment>
     );
   }
 }

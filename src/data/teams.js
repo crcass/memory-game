@@ -20,26 +20,26 @@ import westham from './images/westham.png';
 import wolverhampton from './images/wolverhampton.png';
 
 const teams = [
-  { name: 'Arsenal', image: arsenal },
-  { name: 'Brighton', image: brighton },
-  { name: 'Bournemouth', image: bournemouth },
-  { name: 'Burnley', image: burnley },
-  { name: 'Cardiff', image: cardiff },
-  { name: 'Chelsea', image: chelsea },
-  { name: 'Crystal Palace', image: crystalpalace },
-  { name: 'Everton', image: everton },
-  { name: 'Fulham', image: fulham },
-  { name: 'Huddersfield', image: huddersfield },
-  { name: 'Leicester', image: leicester },
-  { name: 'Liverpool', image: liverpool },
-  { name: 'Manchester City', image: manchester_c },
-  { name: 'Manchester United', image: manchester_u },
-  { name: 'Newcastle', image: newcastle },
-  { name: 'Southampton', image: southampton },
-  { name: 'Tottenham', image: tottenham },
-  { name: 'Watford', image: watford },
-  { name: 'Westham', image: westham },
-  { name: 'Wolverhampton', image: wolverhampton }
+  { name: 'Arsenal', image: arsenal, color: '#F00100' },
+  { name: 'Brighton', image: brighton, color: '#0153A6' },
+  { name: 'Bournemouth', image: bournemouth, color: '#D71820' },
+  { name: 'Burnley', image: burnley, color: '#81204C' },
+  { name: 'Cardiff', image: cardiff, color: '#1A365D' },
+  { name: 'Chelsea', image: chelsea, color: '#0B4595' },
+  { name: 'Crystal Palace', image: crystalpalace, color: '#004A9A' },
+  { name: 'Everton', image: everton, color: '#00369C' },
+  { name: 'Fulham', image: fulham, color: '#F5F5F5' },
+  { name: 'Huddersfield', image: huddersfield, color: '#0072CE' },
+  { name: 'Leicester', image: leicester, color: '#0D55A4' },
+  { name: 'Liverpool', image: liverpool, color: '#D3181E' },
+  { name: 'Manchester City', image: manchester_c, color: '#98C5E9' },
+  { name: 'Manchester United', image: manchester_u, color: '#C70000' },
+  { name: 'Newcastle', image: newcastle, color: '#383838' },
+  { name: 'Southampton', image: southampton, color: '#E60225' },
+  { name: 'Tottenham', image: tottenham, color: '#111836' },
+  { name: 'Watford', image: watford, color: '#FBEE23' },
+  { name: 'Westham', image: westham, color: '#7D2B3A' },
+  { name: 'Wolverhampton', image: wolverhampton, color: '#FDB814' }
 ];
 
 export default teams;
