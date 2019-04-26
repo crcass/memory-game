@@ -1,13 +1,16 @@
 import React, { Component, Fragment } from 'react';
-import LogoContainer from './components/LogoContainer';
-import TeamLogo from './components/TeamLogo';
+import { Normalize } from 'styled-normalize';
 import StyledHeader from './components/StyledHeader';
+import Hero from './components/Hero';
+import TeamContainer from './components/TeamContainer';
+import TeamLogo from './components/TeamLogo';
+import StyledFooter from './components/StyledFooter';
 import teams from './data/teams.js';
 
 class App extends Component {
   state = {
     clicked: [],
-    highestScore: 0,
+    topScore: 0,
     message: ''
   };
 
@@ -30,10 +33,10 @@ class App extends Component {
 
   resetGame = () => {
     const { clicked } = this.state;
-    let { message, highestScore } = this.state;
-    if (highestScore < clicked.length) highestScore = clicked.length;
+    let { message, topScore } = this.state;
+    if (topScore < clicked.length) topScore = clicked.length;
     message = 'You already guessed that!';
-    this.setState({ clicked: [], highestScore, message });
+    this.setState({ clicked: [], topScore, message });
     teams.sort(() => Math.random() - 0.5);
   };
 
@@ -41,8 +44,8 @@ class App extends Component {
     if (this.state.clicked.length === 20) console.log('Winner');
   };
 
-  displayTeams = teams => {
-    return teams
+  displayTeams = teams =>
+    teams
       .sort(() => Math.random() - 0.5)
       .map(team => (
         <TeamLogo
@@ -53,17 +56,19 @@ class App extends Component {
           handleClick={this.handleClick}
         />
       ));
-  };
 
   render() {
     return (
       <Fragment>
+        <Normalize />
         <StyledHeader
           score={this.state.clicked.length}
-          highestScore={this.state.highestScore}
+          highestScore={this.state.topScore}
           message={this.state.message}
         />
-        <LogoContainer>{this.displayTeams(teams)}</LogoContainer>
+        <Hero />
+        <TeamContainer>{this.displayTeams(teams)}</TeamContainer>
+        <StyledFooter />
       </Fragment>
     );
   }

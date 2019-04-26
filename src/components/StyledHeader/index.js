@@ -1,11 +1,20 @@
 import React from 'react';
 import Header from './Header';
+import ScoreContainer from './ScoreContainer';
+import logo from './premier-league-logo-header.png';
 
 const StyledHeader = props => (
   <Header>
-    <p>Score: {props.score}</p>
-    <p>Highest Score: {props.highestScore}</p>
-    <p>{props.message}</p>
+    <a href="/">
+      <img src={logo} alt="Premier League Memory Game" />
+    </a>
+    <ScoreContainer>
+      <span>{props.message}</span>
+    </ScoreContainer>
+    <ScoreContainer>
+      <p>Score: {props.score}</p>
+      <p>Top Score: {props.highestScore}</p>
+    </ScoreContainer>
   </Header>
 );
 
