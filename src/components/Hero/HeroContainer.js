@@ -2,24 +2,24 @@ import styled from 'styled-components';
 import hero_bg from './hero_bg.jpg';
 
 const HeroContainer = styled.div`
-  width: 100%;
-  height: 20em;
+  background-attachment: fixed;
   background-image: url(${hero_bg});
   background-position: bottom;
   background-size: cover;
-  background-attachment: fixed;
+  height: 20em;
   margin: 5em 0 0;
+  width: 100%;
 
   section {
-    width: 100%;
-    height: 100%;
+    align-items: center;
     background: rgba(0, 0, 0, 0.5);
+    color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     font-family: 'Poppins', Arial, Helvetica Neue, Helvetica, sans-serif;
-    color: #fff;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
   }
 
   h1 {

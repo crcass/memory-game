@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
+  align-items: center;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  width: 100%;
 
   p,
   span {
     font-size: 0.8em;
-    min-height: 1em;
     margin: 0.5em 1em;
+    min-height: 1em;
 
     @media (min-width: 576px) {
       font-size: 1.25em;
@@ -26,6 +27,7 @@ const Container = styled.div`
   span {
     color: ${props =>
       props.message === 'Good Guess!' ? '#05FF86' : '#E90052'};
+    flex: 1;
   }
 
   @media (min-width: 576px) {

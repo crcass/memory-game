@@ -1,24 +1,24 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  cursor: pointer;
   background-color: ${props => (props.color ? props.color : 'none')};
-  width: 8em;
-  height: 8em;
-  margin: 1em auto;
-  padding: 0;
-  border: 0.5em solid #e8e8e8;
   border-radius: 5px;
+  border: 0.5em solid #e8e8e8;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
   font-family: 'Work Sans', Arial, Helvetica Neue, Helvetica, sans-serif;
+  margin: 1em auto;
+  padding: 0.5em;
+  height: 8em;
+  width: 8em;
 
   @media (min-width: 768px) {
     transition: all 0.3s ease;
   }
   &:hover {
     @media (min-width: 768px) {
-      transform: scale(1.1);
       box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+      transform: scale(1.1);
     }
   }
   &:focus {

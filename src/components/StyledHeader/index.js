@@ -1,7 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Header from './Header';
 import ScoreContainer from './ScoreContainer';
 import logo from './premier-league-logo-header.png';
+
+const propTypes = {
+  message: PropTypes.string,
+  score: PropTypes.number,
+  topScore: PropTypes.number
+};
 
 const StyledHeader = ({ message, score, topScore }) => (
   <Header>
@@ -11,5 +18,7 @@ const StyledHeader = ({ message, score, topScore }) => (
     <ScoreContainer message={message} score={score} topScore={topScore} />
   </Header>
 );
+
+StyledHeader.propTypes = propTypes;
 
 export default StyledHeader;
