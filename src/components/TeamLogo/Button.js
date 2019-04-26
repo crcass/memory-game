@@ -2,10 +2,7 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   cursor: pointer;
-  background-color: ${props =>
-    props.children._owner.memoizedProps.color
-      ? props.children._owner.memoizedProps.color
-      : 'none'};
+  background-color: ${props => (props.color ? props.color : 'none')};
   width: 8em;
   height: 8em;
   margin: 1em auto;

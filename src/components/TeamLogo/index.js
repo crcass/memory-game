@@ -1,9 +1,9 @@
 import React from 'react';
 import Button from './Button';
 
-const TeamLogo = props => (
-  <Button onClick={props.handleClick}>
-    <img src={props.image} alt={props.name} />
+const TeamLogo = ({ color, name, image, handleClick }) => (
+  <Button color={color} onClick={handleClick}>
+    <img src={image} alt={name} />
   </Button>
 );
 

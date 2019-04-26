@@ -19,31 +19,6 @@ const Header = styled.header`
     display: contents;
   }
 
-  p {
-    color: #fff;
-    @media (min-width: 576px) {
-      width: 130px;
-    }
-  }
-
-  span {
-    color: ${props =>
-      props.children[1]._owner.memoizedProps.message === 'Good Guess!'
-        ? '#05FF86'
-        : '#E90052'};
-  }
-
-  p,
-  span {
-    font-size: 0.8em;
-    min-height: 1em;
-    margin: 0.5em 1em;
-
-    @media (min-width: 576px) {
-      font-size: 1.25em;
-    }
-  }
-
   img {
     height: 100%;
   }

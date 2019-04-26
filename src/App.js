@@ -63,7 +63,7 @@ class App extends Component {
         <Normalize />
         <StyledHeader
           score={this.state.clicked.length}
-          highestScore={this.state.topScore}
+          topScore={this.state.topScore}
           message={this.state.message}
         />
         <Hero />
