@@ -1,12 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import StyledHeader from '../components/StyledHeader';
 import Hero from '../components/Hero';
-import TeamContainer from '../components/TeamContainer';
-import TeamLogo from '../components/TeamLogo';
+import TeamContainer from '../components/TeamsContainer';
+import Teams from '../components/Teams';
 import StyledFooter from '../components/StyledFooter';
+import { shuffleArray, deepClone } from '../helpers';
 import teams from './data/teams.js';
-
-const deepClone = arr => arr.map(object => (object = { ...object }));
 
 class Game extends Component {
   constructor() {
@@ -15,27 +14,23 @@ class Game extends Component {
       clicked: [],
       topScore: 0,
       message: '',
-      teams: this.shuffleTeams(deepClone(teams))
+      teams: shuffleArray(deepClone(teams))
     };
   }
-
-  shuffleTeams = teams =>
-    teams.sort(() => Math.random() - 0.5).map(team => team);
 
   handleClick = e => {
     const name = e.target.alt;
     const { clicked } = this.state;
-    clicked.includes(name) ? this.resetGame() : this.correctGuess(e);
+    clicked.includes(name) ? this.resetGame() : this.correctGuess(name);
   };
 
-  correctGuess = e => {
-    const name = e.target.alt;
+  correctGuess = name => {
     const { clicked } = this.state;
     clicked.push(name);
     this.setState({
       clicked,
       message: 'Good Guess!',
-      teams: this.shuffleTeams(this.state.teams)
+      teams: shuffleArray(this.state.teams)
     });
   };
 
@@ -49,20 +44,9 @@ class Game extends Component {
       clicked: [],
       topScore,
       message: 'You already guessed that!',
-      teams: this.shuffleTeams(this.state.teams)
+      teams: shuffleArray(this.state.teams)
     });
   };
-
-  displayTeams = teams =>
-    teams.map(team => (
-      <TeamLogo
-        key={team.name}
-        color={team.color}
-        name={team.name}
-        image={team.image}
-        handleClick={this.handleClick}
-      />
-    ));
 
   render() {
     return (
@@ -73,7 +57,9 @@ class Game extends Component {
           message={this.state.message}
         />
         <Hero />
-        <TeamContainer>{this.displayTeams(this.state.teams)}</TeamContainer>
+        <TeamContainer>
+          <Teams teams={this.state.teams} handleClick={this.handleClick} />
+        </TeamContainer>
         <StyledFooter />
       </Fragment>
     );
