@@ -17,7 +17,7 @@ class Game extends Component {
       clicked: [],
       topScore: 0,
       message: '',
-      teams: clone
+      teams: this.shuffleTeams(clone)
     };
   }
 
