@@ -4,14 +4,23 @@ import Hero from '../components/Hero';
 import TeamContainer from '../components/TeamContainer';
 import TeamLogo from '../components/TeamLogo';
 import StyledFooter from '../components/StyledFooter';
+import { deepClone } from '../helpers/deepClone';
 import teams from './data/teams.js';
 
+const clone = deepClone(teams);
+
 class Game extends Component {
-  state = {
-    clicked: [],
-    topScore: 0,
-    message: ''
-  };
+  constructor() {
+    super();
+    this.state = {
+      clicked: [],
+      topScore: 0,
+      message: '',
+      teams: clone
+    };
+  }
+
+  shuffleTeams = teams => teams.sort(() => Math.random() - 0.5);
 
   handleClick = e => {
     const name = e.target.alt;
@@ -22,39 +31,35 @@ class Game extends Component {
   correctGuess = e => {
     const name = e.target.alt;
     const { clicked } = this.state;
-    let { message } = this.state;
     clicked.push(name);
-    message = 'Good Guess!';
-    this.setState({ clicked, message });
-    this.winGame();
-    teams.sort(() => Math.random() - 0.5);
+    this.setState({ clicked, message: 'Good Guess!' });
+    this.shuffleTeams(this.state.teams);
   };
 
   resetGame = () => {
     const { clicked } = this.state;
-    let { message, topScore } = this.state;
-    if (topScore < clicked.length) topScore = clicked.length;
-    message = 'You already guessed that!';
-    this.setState({ clicked: [], topScore, message });
-    teams.sort(() => Math.random() - 0.5);
-  };
-
-  winGame = () => {
-    if (this.state.clicked.length === 20) console.log('Winner');
+    let { topScore } = this.state;
+    if (topScore < clicked.length) {
+      topScore = clicked.length;
+    }
+    this.setState({
+      clicked: [],
+      topScore,
+      message: 'You already guessed that!'
+    });
+    this.shuffleTeams(this.state.teams);
   };
 
   displayTeams = teams =>
-    teams
-      .sort(() => Math.random() - 0.5)
-      .map(team => (
-        <TeamLogo
-          key={team.name}
-          color={team.color}
-          name={team.name}
-          image={team.image}
-          handleClick={this.handleClick}
-        />
-      ));
+    teams.map(team => (
+      <TeamLogo
+        key={team.name}
+        color={team.color}
+        name={team.name}
+        image={team.image}
+        handleClick={this.handleClick}
+      />
+    ));
 
   render() {
     return (
@@ -65,7 +70,7 @@ class Game extends Component {
           message={this.state.message}
         />
         <Hero />
-        <TeamContainer>{this.displayTeams(teams)}</TeamContainer>
+        <TeamContainer>{this.displayTeams(this.state.teams)}</TeamContainer>
         <StyledFooter />
       </Fragment>
     );
