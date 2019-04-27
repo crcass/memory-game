@@ -4,8 +4,9 @@ import Hero from '../components/Hero';
 import TeamContainer from '../components/TeamContainer';
 import TeamLogo from '../components/TeamLogo';
 import StyledFooter from '../components/StyledFooter';
-import { deepClone } from '../helpers/deepClone';
 import teams from './data/teams.js';
+
+const deepClone = arr => arr.map(object => (object = { ...object }));
 
 const clone = deepClone(teams);
 
@@ -20,7 +21,8 @@ class Game extends Component {
     };
   }
 
-  shuffleTeams = teams => teams.sort(() => Math.random() - 0.5);
+  shuffleTeams = teams =>
+    teams.sort(() => Math.random() - 0.5).map(team => team);
 
   handleClick = e => {
     const name = e.target.alt;
@@ -32,8 +34,11 @@ class Game extends Component {
     const name = e.target.alt;
     const { clicked } = this.state;
     clicked.push(name);
-    this.setState({ clicked, message: 'Good Guess!' });
-    this.shuffleTeams(this.state.teams);
+    this.setState({
+      clicked,
+      message: 'Good Guess!',
+      teams: this.shuffleTeams(this.state.teams)
+    });
   };
 
   resetGame = () => {
@@ -45,9 +50,9 @@ class Game extends Component {
     this.setState({
       clicked: [],
       topScore,
-      message: 'You already guessed that!'
+      message: 'You already guessed that!',
+      teams: this.shuffleTeams(this.state.teams)
     });
-    this.shuffleTeams(this.state.teams);
   };
 
   displayTeams = teams =>
