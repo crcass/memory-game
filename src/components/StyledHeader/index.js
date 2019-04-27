@@ -12,7 +12,7 @@ const propTypes = {
 
 const StyledHeader = ({ message, score, topScore }) => (
   <Header>
-    <a href="#">
+    <a href="https://crcass.github.io/memory-game/">
       <img src={logo} alt="Premier League Memory Game" />
     </a>
     <ScoreContainer message={message} score={score} topScore={topScore} />

@@ -8,8 +8,6 @@ import teams from './data/teams.js';
 
 const deepClone = arr => arr.map(object => (object = { ...object }));
 
-const clone = deepClone(teams);
-
 class Game extends Component {
   constructor() {
     super();
@@ -17,7 +15,7 @@ class Game extends Component {
       clicked: [],
       topScore: 0,
       message: '',
-      teams: this.shuffleTeams(clone)
+      teams: this.shuffleTeams(deepClone(teams))
     };
   }
 
