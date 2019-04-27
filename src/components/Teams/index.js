@@ -1,6 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TeamLogo from '../TeamLogo';
 import TeamsContainer from './TeamsContainer';
+
+const propTypes = {
+  teams: PropTypes.array,
+  handleClick: PropTypes.func
+};
 
 const Teams = ({ teams, handleClick }) => (
   <TeamsContainer>
@@ -15,5 +21,7 @@ const Teams = ({ teams, handleClick }) => (
     ))}
   </TeamsContainer>
 );
+
+Teams.propTypes = propTypes;
 
 export default Teams;
