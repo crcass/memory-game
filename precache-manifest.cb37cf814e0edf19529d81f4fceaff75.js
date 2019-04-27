@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "385b8d51796ada6f11b83387aefdebc4",
+    "revision": "629f7174eacd2d34c9fe3c231cf4d150",
     "url": "/memory-game/index.html"
   },
   {
-    "revision": "0ca0ebdb7ab431f9a801",
-    "url": "/memory-game/static/js/2.1ae01148.chunk.js"
+    "revision": "397a036d4df3099c1c2b",
+    "url": "/memory-game/static/js/2.43e6df24.chunk.js"
   },
   {
-    "revision": "9b77cf1919785f7d34bc",
-    "url": "/memory-game/static/js/main.948335f7.chunk.js"
+    "revision": "c9b097b62aa2f774998f",
+    "url": "/memory-game/static/js/main.64ecb18f.chunk.js"
   },
   {
     "revision": "799512f57ffe7b17c145",
