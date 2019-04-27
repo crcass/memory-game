@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import StyledHeader from '../components/StyledHeader';
 import Hero from '../components/Hero';
-import TeamContainer from '../components/TeamsContainer';
 import Teams from '../components/Teams';
 import StyledFooter from '../components/StyledFooter';
 import { shuffleArray, deepClone } from '../helpers';
@@ -57,9 +56,7 @@ class Game extends Component {
           message={this.state.message}
         />
         <Hero />
-        <TeamContainer>
-          <Teams teams={this.state.teams} handleClick={this.handleClick} />
-        </TeamContainer>
+        <Teams teams={this.state.teams} handleClick={this.handleClick} />
         <StyledFooter />
       </Fragment>
     );
