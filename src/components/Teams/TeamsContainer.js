@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const TeamContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
-  margin: 1em auto;
+  margin: 0 auto;
   max-width: 511px;
 
   @media (min-width: 576px) {

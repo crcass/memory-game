@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TeamLogo from '../TeamLogo';
 import TeamsContainer from './TeamsContainer';
+import TeamsBg from './TeamsBg';
 
 const propTypes = {
   teams: PropTypes.array.isRequired,
@@ -20,7 +21,9 @@ const renderTeams = (teams, handleClick) =>
   ));
 
 const Teams = ({ teams, handleClick }) => (
-  <TeamsContainer>{renderTeams(teams, handleClick)}</TeamsContainer>
+  <TeamsBg>
+    <TeamsContainer>{renderTeams(teams, handleClick)}</TeamsContainer>
+  </TeamsBg>
 );
 
 Teams.propTypes = propTypes;
