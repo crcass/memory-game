@@ -6,7 +6,7 @@ const Button = styled.button`
   border: 0.5em solid #e8e8e8;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  font-family: 'Work Sans', Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-family: 'Poppins', Arial, Helvetica Neue, Helvetica, sans-serif;
   margin: 1em auto;
   padding: 0.5em;
   height: 8em;
