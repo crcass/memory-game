@@ -19,29 +19,28 @@ class Game extends Component {
 
   handleClick = e => {
     const name = e.target.alt;
-    const { clicked } = this.state;
-    clicked.includes(name) ? this.resetGame() : this.correctGuess(name);
+    const { clicked, topScore } = this.state;
+    clicked.includes(name)
+      ? this.resetGame(clicked, topScore)
+      : this.correctGuess(name, clicked, topScore);
   };
 
-  correctGuess = name => {
-    const { clicked } = this.state;
+  correctGuess = (name, clicked, topScore) => {
     clicked.push(name);
+    if (topScore < clicked.length) {
+      topScore = clicked.length;
+    }
     this.setState({
       clicked,
+      topScore,
       message: 'Good Guess!',
       teams: shuffleArray(this.state.teams)
     });
   };
 
   resetGame = () => {
-    const { clicked } = this.state;
-    let { topScore } = this.state;
-    if (topScore < clicked.length) {
-      topScore = clicked.length;
-    }
     this.setState({
       clicked: [],
-      topScore,
       message: 'You already guessed that!',
       teams: shuffleArray(this.state.teams)
     });
