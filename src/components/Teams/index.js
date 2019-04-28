@@ -8,18 +8,19 @@ const propTypes = {
   handleClick: PropTypes.func.isRequired
 };
 
+const renderTeams = (teams, handleClick) =>
+  teams.map(team => (
+    <TeamLogo
+      key={team.name}
+      color={team.color}
+      name={team.name}
+      image={team.image}
+      handleClick={handleClick}
+    />
+  ));
+
 const Teams = ({ teams, handleClick }) => (
-  <TeamsContainer>
-    {teams.map(team => (
-      <TeamLogo
-        key={team.name}
-        color={team.color}
-        name={team.name}
-        image={team.image}
-        handleClick={handleClick}
-      />
-    ))}
-  </TeamsContainer>
+  <TeamsContainer>{renderTeams(teams, handleClick)}</TeamsContainer>
 );
 
 Teams.propTypes = propTypes;
