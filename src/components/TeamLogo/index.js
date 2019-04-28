@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Button from './Button';
 
 const propTypes = {
-  color: PropTypes.string,
-  name: PropTypes.string,
-  image: PropTypes.string,
-  handleClick: PropTypes.func
+  color: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  handleClick: PropTypes.func.isRequired
 };
 
 const TeamLogo = ({ color, name, image, handleClick }) => (

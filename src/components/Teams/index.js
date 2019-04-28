@@ -4,8 +4,8 @@ import TeamLogo from '../TeamLogo';
 import TeamsContainer from './TeamsContainer';
 
 const propTypes = {
-  teams: PropTypes.array,
-  handleClick: PropTypes.func
+  teams: PropTypes.array.isRequired,
+  handleClick: PropTypes.func.isRequired
 };
 
 const Teams = ({ teams, handleClick }) => (

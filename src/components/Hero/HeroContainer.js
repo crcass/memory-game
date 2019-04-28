@@ -2,9 +2,8 @@ import styled from 'styled-components';
 import hero_bg from './hero_bg.jpg';
 
 const HeroContainer = styled.div`
-  background-attachment: fixed;
   background-image: url(${hero_bg});
-  background-position: bottom;
+  background-position: center;
   background-size: cover;
   height: 20em;
   margin: 5em 0 0;

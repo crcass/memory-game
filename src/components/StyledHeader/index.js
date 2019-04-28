@@ -5,9 +5,9 @@ import ScoreContainer from './ScoreContainer';
 import logo from './premier-league-logo-header.png';
 
 const propTypes = {
-  message: PropTypes.string,
-  score: PropTypes.number,
-  topScore: PropTypes.number
+  message: PropTypes.string.isRequired,
+  score: PropTypes.number.isRequired,
+  topScore: PropTypes.number.isRequired
 };
 
 const StyledHeader = ({ message, score, topScore }) => (
