@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d02a2fcc20b273c80e158af757236e12",
+    "revision": "2057b8c9778cdfe74fbfaf1ef82fb2f4",
     "url": "/memory-game/index.html"
   },
   {
-    "revision": "397a036d4df3099c1c2b",
-    "url": "/memory-game/static/js/2.43e6df24.chunk.js"
+    "revision": "fc7aca401c64f3f75a9c",
+    "url": "/memory-game/static/js/2.c6bb50bc.chunk.js"
   },
   {
-    "revision": "a7155176672ac1d05597",
-    "url": "/memory-game/static/js/main.fc13c94c.chunk.js"
+    "revision": "17ae3534cbdf08ced198",
+    "url": "/memory-game/static/js/main.bc0204bb.chunk.js"
   },
   {
     "revision": "799512f57ffe7b17c145",
@@ -82,6 +82,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fb2f0b0af16f68b49f5c4e7731539805",
     "url": "/memory-game/static/media/southampton.fb2f0b0a.png"
+  },
+  {
+    "revision": "93f63c9107783ddf50c279eaad9462b6",
+    "url": "/memory-game/static/media/teamsBg.93f63c91.svg"
   },
   {
     "revision": "352f16fd77d58540399a631342ac4930",
