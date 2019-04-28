@@ -21,7 +21,7 @@ class Game extends Component {
     const name = e.target.alt;
     const { clicked, topScore } = this.state;
     clicked.includes(name)
-      ? this.resetGame(clicked, topScore)
+      ? this.resetGame()
       : this.correctGuess(name, clicked, topScore);
   };
 
