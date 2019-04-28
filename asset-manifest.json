@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/memory-game/static/js/main.7eaa39de.chunk.js",
-    "main.js.map": "/memory-game/static/js/main.7eaa39de.chunk.js.map",
+    "main.js": "/memory-game/static/js/main.e1d6217b.chunk.js",
+    "main.js.map": "/memory-game/static/js/main.e1d6217b.chunk.js.map",
     "runtime~main.js": "/memory-game/static/js/runtime~main.4bfb86a8.js",
     "runtime~main.js.map": "/memory-game/static/js/runtime~main.4bfb86a8.js.map",
     "static/js/2.c6bb50bc.chunk.js": "/memory-game/static/js/2.c6bb50bc.chunk.js",
     "static/js/2.c6bb50bc.chunk.js.map": "/memory-game/static/js/2.c6bb50bc.chunk.js.map",
     "index.html": "/memory-game/index.html",
-    "precache-manifest.0f5050b0c2f47743a1c3ea8f047426ca.js": "/memory-game/precache-manifest.0f5050b0c2f47743a1c3ea8f047426ca.js",
+    "precache-manifest.03a4ab12f80b9dad509a045b5242f77d.js": "/memory-game/precache-manifest.03a4ab12f80b9dad509a045b5242f77d.js",
     "service-worker.js": "/memory-game/service-worker.js",
     "static/media/arsenal.png": "/memory-game/static/media/arsenal.5e1c5f16.png",
     "static/media/bournemouth.png": "/memory-game/static/media/bournemouth.aed48d22.png",
