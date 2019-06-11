@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e10d407edb520d6309408c997c8ce6ba",
+    "revision": "8948ffccf8e2c1a4e3daaa88ea30ee1f",
     "url": "/memory-game/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/memory-game/static/js/2.c6bb50bc.chunk.js"
   },
   {
-    "revision": "527bc3497e577c55e28f",
-    "url": "/memory-game/static/js/main.e1d6217b.chunk.js"
+    "revision": "75209e0ef2b655c48fbc",
+    "url": "/memory-game/static/js/main.0001a18c.chunk.js"
   },
   {
     "revision": "799512f57ffe7b17c145",
@@ -18,6 +18,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "5e1c5f166cf58160f786712d6ee822d7",
     "url": "/memory-game/static/media/arsenal.5e1c5f16.png"
+  },
+  {
+    "revision": "60bc45a60c845bed6450a102d9b6b403",
+    "url": "/memory-game/static/media/astonvilla.60bc45a6.png"
   },
   {
     "revision": "aed48d2293fdeea2db38aa60870ec933",
@@ -32,10 +36,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/memory-game/static/media/burnley.ff6117d0.png"
   },
   {
-    "revision": "c2d06368ce7fa6e9ca49192580e120b8",
-    "url": "/memory-game/static/media/cardiff.c2d06368.png"
-  },
-  {
     "revision": "85a3a9a74b80f57f9ee55daab5a73e2b",
     "url": "/memory-game/static/media/chelsea.85a3a9a7.png"
   },
@@ -48,16 +48,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/memory-game/static/media/everton.fa5c96f6.png"
   },
   {
-    "revision": "d4283988013426ebdbb9ea2f229dc208",
-    "url": "/memory-game/static/media/fulham.d4283988.png"
-  },
-  {
     "revision": "dc8238efb09ee7b7649e27b3a61e021a",
     "url": "/memory-game/static/media/hero_bg.dc8238ef.jpg"
-  },
-  {
-    "revision": "115549e9c96467cccf311ab375680e3d",
-    "url": "/memory-game/static/media/huddersfield.115549e9.png"
   },
   {
     "revision": "d39359fb06cad713292d44f6d5cdeef9",
@@ -78,6 +70,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9230d00bf0df7e878e129a39f744a5b2",
     "url": "/memory-game/static/media/newcastle.9230d00b.png"
+  },
+  {
+    "revision": "9bca39f0ba236ecceda8744051d2aa20",
+    "url": "/memory-game/static/media/norwich.9bca39f0.png"
+  },
+  {
+    "revision": "4d71ae00fbf156619a962fa99f45d0dc",
+    "url": "/memory-game/static/media/sheffield.4d71ae00.png"
   },
   {
     "revision": "fb2f0b0af16f68b49f5c4e7731539805",
